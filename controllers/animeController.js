@@ -6,6 +6,7 @@ const favAnime = require('../models/anime')
 
 anime.get('/', async (req, res) => {
     const animes = await getAllAnimes();
+    res.status(200).json(animes)
 });
 
 anime.post('/new', async (req, res) => {
