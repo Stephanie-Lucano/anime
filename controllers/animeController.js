@@ -1,10 +1,11 @@
 const express = require('express');
 const anime = express.Router();
+const { getAllAnimes } = require('../queries/animes')
 
 const favAnime = require('../models/anime')
 
-anime.get('/', (req, res) => {
-    res.status(200).json(favAnime)
+anime.get('/', async (req, res) => {
+    const animes = await getAllAnimes();
 });
 
 anime.post('/new', async (req, res) => {
