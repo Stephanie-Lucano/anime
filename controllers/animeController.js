@@ -1,7 +1,7 @@
 const express = require('express');
 const anime = express.Router();
 
-const favAnime = require('../modals/anime')
+const favAnime = require('../models/anime')
 
 anime.get('/', (req, res) => {
     res.status(200).json(favAnime)
